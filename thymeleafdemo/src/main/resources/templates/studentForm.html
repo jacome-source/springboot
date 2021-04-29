@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Data</title>
+</head>
+<body>
+<h2>Student Details</h2>
+<!-- Sintaxe especial para form - fazendo bind na entidade  -->
+<!-- No form associa a entidade e nos inputs as propriedades com *  -->
+<!-- O action faz redirecionamento direto para método do controller aproveitando características REST  -->
+<form th:action="@{/saveStudent}" th:object="${student}" method="post">
+	Name: <input type="text" th:field="*{name}"></input>
+	Score:<input type="text" th:field="*{score}"></input>
+	<input type="submit" value="Save"/>
+	<input type="reset" value="Reset"/>
+</form>
+</body>
+</html>
